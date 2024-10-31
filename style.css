@@ -1,0 +1,333 @@
+@font-face {
+    font-family: 'regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('W95FA'), url("fonts/W95FA.ttf") format("truetype");
+}
+
+body {
+    font-family: 'regular', serif;
+    background-color: #007e7d;
+    cursor: url('cursors/arrow.png'), auto;
+}
+
+* {
+    font-family: 'regular', serif;
+}
+
+.window {
+    width: 400px;
+    height: 300px;
+    background-color: #C3C6CB;
+    padding: 2px;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #808080;
+    box-shadow: 3px 3px 0 #000000;
+}
+
+.windows-title {
+    font-size: 15px;
+    text-align: left;
+    background-color: #000080;
+    color: #FFFFFF;
+    padding: 3px 5px;
+    border-bottom: 1px solid #808080;
+    display: flex;
+    align-items: center;
+}
+
+.windows-title img {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.windows-buttons {
+    margin-left: auto;
+    display: flex;
+}
+
+.windows-close,
+.windows-minimize,
+.windows-maximize {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: center;
+    line-height: 18px;
+    color: black;
+    font-weight: bold;
+    border: 1px outset;
+    background-color: #C0C0C0;
+}
+
+.windows-close::before {
+    content: 'x';
+}
+
+.windows-minimize::before {
+    content: '_';
+}
+
+.windows-maximize::before {
+    content: '+';
+}
+
+.windows-content {
+    background-color: #C3C6CB;
+    padding: 10px;
+    width: 370px;
+    height: 250px;
+    position: absolute;
+    margin: auto;
+    border-top: 1px solid #808080;
+    overflow-y: auto;
+}
+
+.pfp-left {
+    float: left;
+    margin-right: 10px;
+}
+
+.windows-taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #C0C0C0;
+    border-top: 1px solid #808080;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 2px #000000;
+}
+
+.windows-taskbar .start-button {
+    background-color: #000080;
+    color: #FFFFFF;
+    padding: 2px 10px;
+    border: 1px outset #FFFFFF;
+    font-size: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.windows-taskbar .selected {
+    background-color: #d3d3d3;
+    color: #000000;
+    border: 1px inset #767978;
+}
+
+.windows-taskbar .time {
+    margin-left: auto;
+    color: #000000;
+    font-size: 14px;
+}
+
+windows-taskbar img {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
+    
+.windows-taskbar span {
+    background-color: #bfc1bf;
+    color: black;
+    padding: 2px 10px;
+    border: 1px outset #a3a3a3;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #bfc1bf;
+    color: black;
+    padding: 2px 10px;
+    border: 1px outset #a3a3a3;
+    font-size: 14px;
+    margin-right: 10px;
+    cursor: url('/cursors/choose.png'), auto;
+}
+
+button:active {
+    background-color: #d3d3d3;
+    color: #000000;
+    border: 1px inset #767978;
+}
+
+w {
+    color: red;
+    cursor: url('/cursors/blocked.png'), auto;
+}
+
+.time {
+    position: absolute !important;
+    right: 20px !important;
+}
+
+.windows-taskbar img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+#statuscafe{
+    background-color: #b4b7bb;
+    padding: 10px;
+}
+
+.links button {
+    margin: 5px !important;
+}
+
+
+.loading {
+    position: absolute;
+    top: 0;
+    left:0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    text-shadow: 0 0 7px white, 0 0 10px white, 0 0 21px white;
+    z-index: 998;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.loading img {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    right: 50px;
+}
+
+.error {
+    color: red;
+    text-shadow: 0 0 7px red, 0 0 10px red, 0 0 21px red;
+}
+
+.online {
+    color: greenyellow;
+    text-shadow: 0 0 7px greenyellow, 0 0 10px greenyellow, 0 0 21px greenyellow;
+}
+
+.offline {
+    color: grey;
+    text-shadow: 0 0 7px grey, 0 0 10px grey, 0 0 21px grey;
+}
+
+.dnd {
+    color: red;
+    text-shadow: 0 0 7px red, 0 0 10px red, 0 0 21px red;
+}
+
+.idle {
+    color: yellow;
+    text-shadow: 0 0 7px yellow, 0 0 10px yellow, 0 0 21px yellow;
+}
+
+.context-board {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 90vh;
+    width: 240px;
+    background-color: #C3C6CB;
+    padding: 2px;
+    border: 2px solid #808080;
+    box-shadow: 3px 3px 0 #000000;
+}
+
+.board-title {
+    font-size: 15px;
+    text-align: left;
+    background-color: #000080;
+    color: #FFFFFF;
+    /* padding: 3px 5px; */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #808080;
+    display: flex;
+    align-items: center;
+}
+
+.board-title img {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.board-content {
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.board-content li {
+    list-style-type: none;
+    background: url("./assets/wxp_44.ico") no-repeat left center;
+    padding-left: 20px;
+    background-size: 16px 16px;
+}
+
+.board-content a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.board-content a:visited {
+    color: #000000;
+}
+
+.board-content a:hover {
+    color: #0000ff;
+}
+
+
+.board-content a:hover {
+    cursor: url('/cursors/choose.png'), auto;
+}
+
+.inspired-board {
+    display: flexbox;
+    justify-content: left;
+    position: absolute;
+    bottom: 10px;
+}
+
+.boot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    text-shadow: 0 0 7px white, 0 0 10px white, 0 0 21px white;
+    z-index: 999;
+    padding: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boot img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+
+.warning {
+    color: yellow;
+    text-shadow: 0 0 7px yellow, 0 0 10px yellow, 0 0 21px yellow;
+}

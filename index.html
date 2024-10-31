@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syirezz's web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="boot">
+        <button class="start-btn">Power ON</button>
+        <p class="warning">Warning! Recommended to use Desktop for visiting this site!</p>
+    </div>
+
+    <div class="loading" id="loadingText">
+        <!-- <p>DepthBios (C) 1991, DepthsGlobal Security Inc</p>
+        <p>BIOS Date 09/21/91 15:43:29 Ver: 09.02.15</p>
+        <p>CPU: Intel (R) CPU 330 @ 40 MHz</p>
+        <p>Speed: 40MHz</p>
+        <p>This VGA/PCI Bios ia released under the GNU LGPL</p>
+        <br>
+        <p>Press F11 for BBS POPUP</p>
+        <p>Memory Clock: 64MHz, 8 bit</p>
+        <p>Memory Test: 128420K OK</p>
+        <br>
+        <p>NVXX ROM Version: 4.092.88</p>
+        <p>Initalizing USB Controllers.. Done.</p>
+        <p>128KB OK</p>
+        <p>USB Device (s): 1 Keyboard, 1 Mouse, 1 Hub, 1 Storage Device.</p>
+        <p>Auto-detecting USB Masa Storage Devices..</p>
+        <p>Device 101: USB 2.0 FlashDisk *Speed*</p>
+        <p>01 USB anas storage...</p>
+        <p>Devices found and configured.</p>
+        <p>(C) DepthsGlobal Security, Inc. 64-0100-00001-001011111-092909-79297-1A20V003-Y2UC</p> -->
+    </div>
+    
+
+    <div class="root">
+        <div class="window" id="draggable-window-1">
+            <div class="windows-title">
+                <img src="./assets/icon.ico" alt="icon">
+                <span>About me - syirezz.nekoweb.org | Status: <span class="status">OFFLINE</span></span>
+                <div class="windows-buttons">
+                    <div class="windows-minimize"></div>
+                    <div class="windows-maximize"></div>
+                    <div class="windows-close"></div>
+                </div>
+            </div>
+            <div class="windows-content">
+                <img class="pfp-left" src="./assets/pfp.png">
+                <h1><b>Syirezz Cheese</b></h1>
+                <p>I’m Syirezz Chesse, 13, <span class="gender-t">transgender</span> and <span class="gender-p">pansexual</span>. Russian programmer and designer. Loves Python, JS and boyfriend (<b>@kararasenok_gd</b>)</p>
+                <h2>Projects:</h2>
+                <ul>
+                    <li><b>NiceBot</b> - Telegram & Discord bot (Created with my boyfriend)</li>
+                    <li><b>Lynt Desktop</b> - Small project for site Lyntr. It’s was created just for fun but lyntr was closed...</li>
+                    <li><b>mestai.online</b> - This project was maded with @justablock_ and @kararasenok_gd. We make a site with 40+ AI models for free</li>
+                </ul>
+
+                <h2>OCs:</h2>
+                <ul>
+                    <li><b>LightJaw</b> - Hazardous shark-candle hybrid with glowing fins and swift movement. Known for agility and luminosity.</li>
+                    <li><b>Cassy</b> - Laboratory-made entity. Cheesy shapeshifter. 14 years old. Hybrid of Cat and Cheese. Interactions controlled by Syirezz Cheese.</li>
+                    <li><b>PsycoPump</b> - Laboratory-made entity. <w>[REDACTED]</w>. 18 years old. Hybrid of Pumpkin and Cat. Interactions controlled by Syirezz Cheese.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="window" id="draggable-window-2" style="left: 50%; top: 78%;">
+            <div class="windows-title">
+                <img src="./assets/icon.ico" alt="icon">
+                <span>Explore My World!</span>
+                <div class="windows-buttons">
+                    <div class="windows-minimize"></div>
+                    <div class="windows-maximize"></div>
+                    <div class="windows-close"></div>
+                </div>
+            </div>
+            <div class="windows-content">
+                <h1><b>Links & Tools</b></h1>
+                <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=syirezz" defer></script>
+                <!-- <p class="status">I'm [STATUS]</p> -->
+                <div id="player">
+                    <iframe id="player-frame" src="lastfm-now-playing/index.html" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <h2>Links:</h2>
+                <div class="links">
+                    <button onclick="window.open('https://github.com/KailUser', '_blank')">Github</button>
+                    <button onclick="window.open('http://bsky.app/profile/syirezz.bsky.social', '_blank')">BlueSky</button>
+                    <button onclick="window.open('https://reddit.com/user/syirezz', '_blank')">Reddit</button>
+                    <button onclick="window.open('https://discord.com/users/992006036544290837', '_blank')">Discord</button>
+                    <button onclick="window.open('https://t.me/@syirezz_official', '_blank')">Telegram</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="context-board">
+            <div class="board-title">
+                <img src="./assets/icon.ico" alt="icon">
+                <span>Useful information</span>
+                <!-- <div class="windows-buttons">
+                    <div class="windows-minimize"></div>
+                    <div class="windows-maximize"></div>
+                    <div class="windows-close"></div>
+                </div> -->
+            </div>
+
+            <div class="board-content">
+                <h2>Board</h2>
+                <ul class="board">
+                    <li><a href="https://syirezz.nekoweb.org">Home</a></li>
+                    <li><a href="https://last.fm/user/syirezz">Last.fm</a></li>
+                    <li><a href="/gallery_ocs/index.html">OC Gallery</a></li>
+                    <li><a href="https://discord.com/users/992006036544290837">Discord</a></li>
+                    <li><a href="https://t.me/@syirezz_official">Telegram</a></li>
+                    <li><a href="https://bsky.app/profile/syirezz.bsky.social">BlueSky</a></li>
+                </ul>
+                <iframe src="https://nekoweb.org/frame/follow/" frameborder="0" width="170" height="28"></iframe>
+
+                <div class="inspired-board">
+                    <h2>Inspired by:</h2>
+                    <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="windows-taskbar">
+            <button><img src="./assets/start_btn.ico" alt="icon">Start</button>
+            <button class="selected"><img src="./assets/icon.ico">Internet Explorer</button>
+            <span class="time" style="float: right;"></span>
+            <button onclick="window.open('https://nekoweb.org', '_blank')">Hosted by: <img style="width: auto;" src="assets/button6.gif" alt="NekoWeb"></button>
+        </div>
+    </div>
+<script src="time.js"></script>
+<script src="boot.js"></script>
+<script src="status.js"></script>
+<script>
+    function checkBoardVisibility() {
+        var board = document.getElementsByClassName("context-board");
+        if (window.innerWidth < 768) {
+            for (var i = 0; i < board.length; i++) {
+                board[i].style.display = "none";
+            }
+        } else {
+            for (var i = 0; i < board.length; i++) {
+                board[i].style.display = "block";
+            }
+        }
+    }
+    setInterval(checkBoardVisibility, 0);
+</script>
+</body>
+</html>
+

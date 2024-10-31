@@ -1,0 +1,35 @@
+a {
+    text-decoration: none;
+}
+
+a#track {
+    font-weight: bold;
+}
+
+a:hover {
+    color: #6DDAB9;
+    cursor: url('../cursors/choose.png'), auto;
+}
+
+@font-face {
+    font-family: 'regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('W95FA'), url("../fonts/W95FA.ttf") format("truetype");
+}
+
+body {
+    font-family: 'regular', serif;
+    cursor: url('../cursors/arrow.png'), auto;
+}
+
+* {
+    color: black;
+}
+
+table {
+    background-color: #b4b7bb;
+    padding: 10px;
+    /* borde; */
+}
+
