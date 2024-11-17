@@ -25,4 +25,4 @@ function updateStatus() {
         });
 }
 
-updateStatus();
+setInterval(updateStatus, 5000);

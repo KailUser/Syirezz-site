@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>???</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .worker {
+            color: #267BFB;
+            font-weight: bold;
+        }
+
+        .selected {
+            background-color: #444; /* Highlight selected item */
+            border-radius: 5px;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome back, <span id="usernameDisplay"></span></h1>
+    <h2>Database: Silo-X</h2><br>
+    <h3>Choose object</h3>
+    <ul>
+        <li>Glowing Terror</li>
+        <li>Agent Cassy</li>
+        <li>NotPumpkin</li>
+        <li>E-NOIR</li>
+        <li>S-LIGHT</li>
+        <li>V-VOID <span class="worker">[WORKER]</span></li>
+        <li>???</li>
+    </ul>
+    
+    <p class="output" style="display: none;"><span id="usernameDisplay"></span>@syirezz.space:</p>
+    <div id="output"></div>
+
+<script>
+let nickname = localStorage.getItem("nickname");
+const output = document.getElementById("output");
+let selected = 0; // Ensure selected is defined globally
+
+if (nickname == null) {
+    const name = "W-" + Math.floor(Math.random() * 24000).toString(16).toUpperCase().padStart(4, '0');
+    localStorage.setItem("nickname", name);
+    nickname = name;
+}
+
+document.getElementById("usernameDisplay").textContent = nickname;
+
+// Characteristics Data
+const characteristicsData = {
+    "Agent Cassy": {
+        codeName: "Agent Cassy",
+        room: "511",
+        biological: {
+            species: "Hybrid of Cat and Cheese",
+            age: "14 years",
+            height: "6’0” (183 cm)",
+            weight: "135–155 lbs (61–70 kg)"
+        },
+        features: [
+            "Manipulation Form: In its processed cheese form, it can change its shape, stretch, or fit through narrow spaces.",
+        ],
+        origin: {
+            birthplace: "Depths Global Corporation",
+            backstory: "Born in a secret lab, Cassy was created by fusing cheese and cat DNA. Raised in isolation by scientists."
+        }
+    },
+    "Glowing Terror": {
+        codeName: "Glowing Terror",
+        room: "[REDACTED]",
+        biological: {
+            species: "Hybrid of Shark and Candle",
+            age: "15 years",
+            height: "[REDACTED]",
+            weight: "[REDACTED]"
+        },
+        features: [
+            "Luminous fins that glow in the dark.",
+            "Strong, agile body for swift underwater movement."
+        ],
+        origin: {
+            birthplace: "[REDACTED]",
+            backstory: "Born in the depths of the ocean, exposed to bioluminescent algae, created from shark and candle DNA."
+        }
+    },
+    "NotPumpkin": {
+        codeName: "NotPumpkin",
+        room: "512",
+        biological: {
+            species: "Hybrid of Cat and Pumpkin",
+            age: "18 years",
+            height: "5'6\" (168 cm)",
+            weight: "120–140 lbs (54–64 kg)"
+        },
+        features: [
+            "[REDACTED] - Sightings continue."
+        ],
+        origin: {
+            birthplace: "[Depths Global Corporation]",
+            backstory: "Created in the laboratory of Depths Global Corporation, the character was originally conceived as a bio-hybrid for scientific experiments. However, thanks to its unique characteristics and cute appearance, she quickly became a favorite among the laboratory staff."
+        }
+    },
+    "E-NOIR": {
+        codeName: "E-NOIR",
+        room: "513",
+        biological: {
+            species: "Hybrid of Cat and [REDACTED]",
+            age: "5 years",
+            height: "5'5\" (165 cm)",
+            weight: "110 lbs (49 kg)"
+        },
+        features: [
+            "One Arm: The tail functions as an arm, enabling actions that require grasping and manipulating objects.",
+            "Fusion: Can become one with S-LIGHT.",
+            "Unique Ability: Can blend into shadows, becoming nearly invisible in low light."
+        ],
+        origin: {
+            birthplace: "The Enchanted Forest",
+            backstory: "E-NOIR was created in a secret laboratory where various animal DNA was combined to produce unique hybrids. They were designed to possess both cunning intelligence and agility, making them adept at stealth and strategy."
+        }
+    },
+    "S-LIGHT": {
+        codeName: "S-LIGHT",
+        room: "514",
+        biological: {
+            species: "Hybrid of Cat and [REDACTED]",
+            age: "5 years",
+            height: "5'5\" (165 cm)",
+            weight: "110 lbs (49 kg)"
+        },
+        features: [
+            "One Arm: The tail functions as an arm, enabling actions that require grasping and manipulating objects.",
+            "Fusion: Can become one with E-NOIR.",
+            "Unique Ability: Emits a soft glow that can illuminate dark areas, providing comfort and safety."
+        ],
+        origin: {
+            birthplace: "The Enchanted Garden",
+            backstory: "S-LIGHT was engineered to be the light counterpart to E-NOIR, combining traits of speed and gentleness. They were part of an experiment to create balance between light and darkness, serving as a beacon of hope in shadowy situations."
+        }
+    },
+    "V-VOID [WORKER]": {
+        codeName: "V-VOID",
+        room: "510",
+        biological: {
+            species: "Hybrid of Cat and [REDACTED]",
+            age: "13 years",
+            height: "160 cm",
+            weight: "52 kg"
+        },
+        features: [
+            "Occasional Ability: Has a unique ability to make objects in their hands pass through solid matter at will. This ability is especially useful when retrieving items from tight or hard-to-reach spaces."
+        ],
+        origin: {
+            birthplace: "[REDACTED FOR PRIVACY]",
+            backstory: "Living in a city where east meets west, Syirezz became interested in solving complex problems early on. They often experiment with ways to enhance their unique abilities, finding parallels between their talent and the laws of physics, especially when studying object manipulation."
+        }
+    }
+};
+
+// Update selection highlighting
+const updateSelection = () => {
+    document.querySelectorAll("ul li").forEach((el, i) => {
+        if (i === selected) {
+            el.classList.add("selected");
+            el.innerHTML = "→ " + el.innerHTML.replace(/^→\s*/, '');
+        } else {
+            el.classList.remove("selected");
+            el.innerHTML = el.innerHTML.replace(/^→\s*/, '');
+        }
+    });
+};
+
+document.onkeydown = function (e) {
+    switch (e.key) {
+        case "ArrowUp":
+            selected--; // Move up
+            break;
+        case "ArrowDown":
+            selected++; // Move down
+            break;
+        case "Enter":
+            output.innerHTML = ""; // Clear previous output
+            const item = document.querySelectorAll("ul li")[selected].textContent.replace(/^→\s*/, '');
+
+            // if (item === "Glowing Terror") {
+
+            if (item === "???") {
+                // Handle "???" differently
+                const p = document.createElement("p");
+                p.classList.add("error");
+                p.textContent = "Error: Object details are not available in the database.";
+                output.appendChild(p);
+            } else {
+                // Normal card generation
+                const card = document.createElement("div");
+                // card.style.border = "1px solid white";
+                // card.style.padding = "10px";
+                // card.style.borderRadius = "10px";
+                card.style.marginTop = "20px";
+                // card.style.textAlign = "center";
+
+                // Add image
+                const img = document.createElement("img");
+                img.src = `/assets/objects/${item.toLowerCase().replace(/\s+/g, '')}.png`;
+                img.alt = item;
+                img.style.width = "150px";
+                img.style.height = "150px";
+                img.style.objectFit = "contain";
+                img.style.backgroundColor = "#D9D9D9";
+                img.style.padding = "10px";
+                img.style.borderRadius = "10px";
+
+                // Add details
+                const data = characteristicsData[item];
+                const h1 = document.createElement("h1");
+                h1.textContent = `${data.codeName} (Room: ${data.room})`;
+
+                const bio = document.createElement("p");
+                bio.innerHTML = `
+                    <strong>Biological Characteristics:</strong><br>
+                    Species: ${data.biological.species}<br>
+                    Age: ${data.biological.age}<br>
+                    Height: ${data.biological.height}<br>
+                    Weight: ${data.biological.weight}<br>
+                `;
+
+                const features = document.createElement("ul");
+                data.features.forEach((feature) => {
+                    const li = document.createElement("li");
+                    li.textContent = feature;
+                    features.appendChild(li);
+                });
+
+                const origin = document.createElement("p");
+                origin.innerHTML = `
+                    <strong>Origin:</strong><br>
+                    Birthplace: ${data.origin.birthplace}<br>
+                    Backstory: ${data.origin.backstory}<br>
+                `;
+
+                // Append all to card
+                card.appendChild(img);
+                card.appendChild(h1);
+                card.appendChild(bio);
+                card.appendChild(features);
+                card.appendChild(origin);
+
+                // Display the card
+                output.appendChild(card);
+            }
+            break;
+    }
+
+    selected = Math.max(0, Math.min(selected, document.querySelectorAll("ul li").length - 1)); // Keep selection in range
+    updateSelection();
+};
+
+// Initialize
+updateSelection();
+</script>
+</body>
+</html>
