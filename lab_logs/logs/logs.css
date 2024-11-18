@@ -1,0 +1,188 @@
+/* style.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #161b22;
+    padding: 15px;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #ff7b72;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Content Section */
+.content {
+    background-color: #161b22;
+    padding: 20px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content li {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.content li:nth-child(even) {
+    background-color: #161b22;
+}
+
+.hint {
+    background-color: #ff7b72;
+    color: #0d1117;
+    font-style: italic;
+    font-weight: bold;
+    border-color: #ff4e4e;
+}
+
+.hidden {
+    visibility: hidden;
+    color: #8b949e;
+    font-style: italic;
+}
+
+.hidden:hover {
+    visibility: visible;
+    color: #ff7b72;
+    text-decoration: underline;
+}
+
+.hidden-message {
+    font-weight: bold;
+    color: #ff7b72;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Entity Styling */
+.eclipse {
+    color: #58a6ff;
+    font-style: italic;
+}
+
+.solace {
+    color: #3fb950;
+    font-style: italic;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+    color: #8b949e;
+    border-top: 1px solid #30363d;
+    padding-top: 10px;
+}
+
+/* Experiment Log Styling */
+.experiment-log {
+    background-color: #161b22;
+    border: 2px solid #30363d;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    color: #c9d1d9;
+}
+
+.experiment-header {
+    background-color: #21262d;
+    padding: 15px;
+    border-bottom: 2px solid #30363d;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+.experiment-header h1 {
+    font-size: 1.8rem;
+    color: #ff7b72;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.experiment-header p {
+    font-size: 1.2rem;
+    color: #58a6ff;
+    font-style: italic;
+}
+
+.experiment-details, 
+.experiment-data, 
+.experiment-logs, 
+.experiment-origin, 
+.experiment-conclusion {
+    margin-top: 20px;
+}
+
+.experiment-details h2, 
+.experiment-data h2, 
+.experiment-logs h2, 
+.experiment-origin h2, 
+.experiment-conclusion h2 {
+    font-size: 1.5rem;
+    color: #8b949e;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.experiment-data ul, 
+.experiment-logs ul, 
+.experiment-origin ul {
+    list-style: none;
+    padding: 0;
+}
+
+.experiment-data ul li, 
+.experiment-logs ul li, 
+.experiment-origin ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.experiment-logs ul li strong {
+    color: #ff7b72;
+}
+
+.experiment-footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #21262d;
+    border-top: 2px solid #30363d;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    font-style: italic;
+    color: #8b949e;
+}
