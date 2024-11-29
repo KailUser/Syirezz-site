@@ -10,7 +10,7 @@
 
     <div class="boot">
         <button class="start-btn">Power ON</button>
-        <p class="warning">Warning! Recommended to use Desktop for visiting this site!</p>
+        <p class="warning">Warning! <span style="text-decoration: underline;">TOTTALY</span> Recommended to use Desktop for visiting this site!</p>
     </div>
 
     <div class="loading" id="loadingText">
@@ -92,6 +92,22 @@
             </div>
         </div>
 
+        <div class="window" id="draggable-window-3" style="left: 20%; top: 78%;">
+            <div class="windows-title">
+                <img src="./assets/icon.ico" alt="icon">
+                <span>Welcome to Syirezz's WORLD!</span>
+                <div class="windows-buttons">
+                    <div class="windows-minimize"></div>
+                    <div class="windows-maximize"></div>
+                    <div class="windows-close"></div>
+                </div>
+            </div>
+            <div class="windows-content">
+                <!-- Canvas вместо iframe -->
+                <iframe src="/World/index.html" frameborder="0"></iframe>
+                <!-- <button id="show-world">Show World</button> -->
+            </div>
+        </div>
 
         <div class="context-board">
             <div class="board-title">
@@ -120,7 +136,7 @@
 
                 <div class="inspired-board">
                     <h2>Inspired by:</h2>
-                    <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+                    <p>Nothing :3</p>
                 </div>
             </div>
         </div>
@@ -151,6 +167,14 @@
     }
     setInterval(checkBoardVisibility, 0);
 </script>
+<script>
+    function showWorld() {
+        var world = document.getElementById("world");
+        if (world.style.display === "none") {
+            world.style.display = "block";
+        } else {
+            world.style.display = "none";
+        }}
+</script>
 </body>
 </html>
-

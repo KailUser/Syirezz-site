@@ -374,6 +374,20 @@ w {
     text-shadow: -3px 0 #00FFFB;
     animation: glitch-anim-2 1.5s infinite;
   }
+
+/* Сброс стилей для контента внутри окна */
+#draggable-window-3 .windows-content {
+  all: unset;
+}
+
+/* Ограничение размеров и центрирование canvas */
+.windows-content iframe {
+  width: 370px;
+  height: 250px;
+  display: block;
+  margin: 0 auto; /* Центрирование */
+  border: 1px solid #ccc; /* Для визуальной границы, если нужно */
+}
   
   @keyframes glitch {
     0% {

@@ -18,6 +18,7 @@ function beep() {
     var loadingText = document.querySelector(".loading");
     dragElement(document.getElementById("draggable-window-1"));
     dragElement(document.getElementById("draggable-window-2"));
+    dragElement(document.getElementById("draggable-window-3"));
 
     // var x = document.getElementById("draggable-window-1").offsetLeft + Math.floor(Math.random() * (250 - 10 + 20)) + 10;
     // var y = document.getElementById("draggable-window-1").offsetTop + Math.floor(Math.random() * (250 - 10 + 20)) + 10;
